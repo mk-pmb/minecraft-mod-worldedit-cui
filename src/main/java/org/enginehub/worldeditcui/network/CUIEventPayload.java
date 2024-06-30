@@ -24,7 +24,7 @@ import java.util.List;
 
 public record CUIEventPayload(boolean multi, String eventType, List<String> args) implements CustomPacketPayload {
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final CustomPacketPayload.Type<CUIEventPayload> TYPE = new Type<>(new ResourceLocation("worldedit", "cui"));
+    public static final CustomPacketPayload.Type<CUIEventPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath("worldedit", "cui"));
     public static final StreamCodec<RegistryFriendlyByteBuf, CUIEventPayload> CODEC = CustomPacketPayload.codec(CUIEventPayload::encode, CUIEventPayload::decode);
 
     public CUIEventPayload {

@@ -156,7 +156,7 @@ public class BufferBuilderRenderSink implements RenderSink {
                 this.canLoop = true;
             }
         } else {
-            builder.vertex(x, y, z).color(this.r, this.g, this.b, this.a).endVertex();
+            builder.addVertex((float) x, (float) y, (float) z).setColor(this.r, this.g, this.b, this.a);// .endVertex();
         }
         return this;
     }

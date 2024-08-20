@@ -87,9 +87,8 @@ public class BufferBuilderRenderSink implements RenderSink {
                 this.flush();
                 if (this.active && this.activeRenderType != null) {
                     this.canFlush = true;
-                    this.builder = Tesselator.getInstance().getBuilder();
+                    this.builder = Tesselator.getInstance().begin(this.activeRenderType.mode, this.activeRenderType.format);
                     RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-                    this.builder.begin(this.activeRenderType.mode, this.activeRenderType.format);
                 }
                 LineWidth.set(this.lastLineWidth = line.lineWidth);
                 RenderSystem.depthFunc(this.lastDepthFunc = line.renderType.depthFunc());

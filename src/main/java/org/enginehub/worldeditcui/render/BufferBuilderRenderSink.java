@@ -138,16 +138,16 @@ public class BufferBuilderRenderSink implements RenderSink {
             // we buffer vertices so we can compute normals here
             if (this.canLoop) {
                 final Vector3f normal = this.activeRenderType.hasNormals ? this.computeNormal(this.loopX, this.loopY, this.loopZ, x, y, z) : null;
-                builder.vertex(this.loopX, this.loopY, this.loopZ).color(this.r, this.g, this.b, this.a);
+                builder.addVertex((float) this.loopX, (float) this.loopY, (float) this.loopZ).setColor(this.r, this.g, this.b, this.a);
                 if (normal != null) {
-                    builder.normal(normal.x(), normal.y(), normal.z());
+                    builder.setNormal(normal.x(), normal.y(), normal.z());
                 }
-                builder.endVertex();
-                builder.vertex(x, y, z).color(this.r, this.g, this.b, this.a);
+                // builder.endVertex();
+                builder.addVertex((float) x, (float) y, (float) z).setColor(this.r, this.g, this.b, this.a);
                 if (normal != null) {
-                    builder.normal(normal.x(), normal.y(), normal.z());
+                    builder.setNormal(normal.x(), normal.y(), normal.z());
                 }
-                builder.endVertex();
+                // builder.endVertex();
                 this.canLoop = false;
             } else {
                 this.loopX = x;

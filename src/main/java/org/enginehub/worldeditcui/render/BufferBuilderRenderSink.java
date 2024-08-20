@@ -237,7 +237,10 @@ public class BufferBuilderRenderSink implements RenderSink {
             if (this.activeRenderType != null) {
                 RenderSystem.setShader(this.activeRenderType.shader);
             }
-            Tesselator.getInstance().end();
+            MeshData meshData = this.builder.build();
+            if (meshData != null) {
+                BufferUploader.drawWithShader(meshData);
+            }
         } finally {
             this.postFlush.run();
             this.builder = null;

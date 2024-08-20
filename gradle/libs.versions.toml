@@ -3,23 +3,23 @@ format = { version = "1.1" }
 
 [versions]
 indra = "3.1.3"
-minecraft = "1.20.6"
+minecraft = "1.21"
 fabricLoader = "0.15.11"
-fabricApi = "0.98.0+1.20.6"
-modmenu = "10.0.0-beta.1"
-viafabricplus = "3.3.0"
+fabricApi = "0.100.4+1.21"
+modmenu = "11.0.1"
+viafabricplus = "3.4.1"
 vineflower = "1.10.1"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
-parchment = { module = "org.parchmentmc.data:parchment-1.20.6", version = "2024.05.01" }
+parchment = { module = "org.parchmentmc.data:parchment-1.21", version = "2024.06.23" }
 fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricLoader" }
 fabric-api = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabricApi" }
 modmenu = { module = "com.terraformersmc:modmenu", version.ref = "modmenu" }
 viafabricplus-api = { module = "de.florianmichael:ViaFabricPlus", version.ref = "viafabricplus" }
-viaversion = { module = "com.viaversion:viaversion-common", version = "5.0.0-SNAPSHOT" }
+viaversion = { module = "com.viaversion:viaversion-common", version = "5.0.0" }
 vineflower = { module = "org.vineflower:vineflower", version.ref = "vineflower" }
-worldedit = { module = "com.sk89q.worldedit:worldedit-fabric-mc1.20.6", version = "7.3.1" }
+worldedit = { module = "com.sk89q.worldedit:worldedit-fabric-mc1.21", version = "7.4.0-SNAPSHOT" }
 
 [plugins]
 curseForgeGradle = { id = "net.darkhax.curseforgegradle", version = "1.1.18" }

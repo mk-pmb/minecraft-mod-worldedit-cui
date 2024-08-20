@@ -268,8 +268,7 @@ public class BufferBuilderRenderSink implements RenderSink {
         if (this.activeRenderType == null || this.activeRenderType.mode != renderType.mode) {
             this.canFlush = true;
             RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-            this.builder = Tesselator.getInstance().getBuilder();
-            this.builder.begin(renderType.mode, renderType.format);
+            this.builder = Tesselator.getInstance().begin(renderType.mode, renderType.format);
         }
         this.activeRenderType = renderType;
         this.active = true;

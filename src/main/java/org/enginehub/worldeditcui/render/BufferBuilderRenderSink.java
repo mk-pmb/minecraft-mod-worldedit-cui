@@ -168,7 +168,7 @@ public class BufferBuilderRenderSink implements RenderSink {
         final double dZ = (z1 - z0);
         final double length = Math.sqrt(dX * dX + dY * dY + dZ * dZ);
         final Vector3f normal = new Vector3f((float) (dX / length), (float) (dY / length), (float) (dZ / length));
-        // normal.transform(RenderSystem.getModelViewStack().last().normal());
+        // normal.transform(RenderSystem.getModelViewStack().last().setNormal());
         return normal;
     }
 
